@@ -1,6 +1,6 @@
 import React from 'react';
-import { routerRedux, Route, Switch, Redirect } from 'dva/router';
-import { LocaleProvider, Spin } from 'antd';
+import { Redirect, Route, routerRedux, Switch } from 'dva/router';
+import { LocaleProvider, Button } from 'antd';
 import zhCN from 'antd/lib/locale-provider/zh_CN';
 import dynamic from 'dva/dynamic';
 
@@ -16,10 +16,6 @@ interface RoutersProps{
 
 const { ConnectedRouter } = routerRedux;
 
-dynamic.setDefaultLoadingComponent(() => {
-  return <Spin size="large" className={styles.globalSpin} />;
-});
-
 function RouterConfig({ history, app }: RoutersProps) {
   // const passProps = {
   //   app,
@@ -28,7 +24,11 @@ function RouterConfig({ history, app }: RoutersProps) {
   return (
     <LocaleProvider locale={zhCN}>
       <ConnectedRouter history={history}>
-        <div>hello</div>
+        <div>
+          <p className={styles.test}>hello</p>
+          <br/>
+          <Button type="primary">Primary</Button>
+        </div>
       </ConnectedRouter>
     </LocaleProvider>
   );

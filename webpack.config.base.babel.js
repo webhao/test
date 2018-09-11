@@ -81,10 +81,25 @@ export default {
             },
           },
           {
-            loader: 'postcss-loader',
+            loader: 'less-loader',
             options: {
               sourceMap: true,
-              plugins: () => [postcssImport, postcssPresetEnv, cssnano],
+              javascriptEnabled: true,
+              modifyVars: theme,
+            },
+          },
+        ],
+        exclude: /node_modules/,
+      },
+      {
+        test: /\.less$/,
+        use: [
+          devMode ? 'style-loader' : MiniCssExtractPlugin.loader,
+          {
+            loader: 'css-loader',
+            options: {
+              sourceMap: !devMode,
+              importLoaders: 1,
             },
           },
           {
@@ -92,10 +107,11 @@ export default {
             options: {
               sourceMap: true,
               javascriptEnabled: true,
-              modifyVars: theme
+              modifyVars: theme,
             },
           },
         ],
+        exclude: /src/,
       },
       // Use image-webpack-loader and url-loader to load images
       {
