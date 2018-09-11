@@ -9,6 +9,9 @@ import styles from './index.less';
 // import Login from './routes/Login';
 // import App from './layouts/App';
 
+import PageA from './routes/PageA';
+import PageB from './routes/PageB';
+
 interface RoutersProps{
   history: object;
   app: object;
@@ -24,11 +27,10 @@ function RouterConfig({ history, app }: RoutersProps) {
   return (
     <LocaleProvider locale={zhCN}>
       <ConnectedRouter history={history}>
-        <div>
-          <p className={styles.test}>hello</p>
-          <br/>
-          <Button type="primary">Primary</Button>
-        </div>
+        <Switch>
+          <Route exact path="/" component={PageA} />
+          <Route exact path="/b" component={PageB} />
+        </Switch>
       </ConnectedRouter>
     </LocaleProvider>
   );
