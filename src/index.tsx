@@ -1,9 +1,9 @@
-import dva from 'dva'
-import createLoading from 'dva-loading'
-import createHistory from 'history/createBrowserHistory'
+import dva from 'dva';
+import createLoading from 'dva-loading';
+import createHistory from 'history/createBrowserHistory';
 import 'moment/locale/zh-cn';
 
-import router from './router'
+import router from './router';
 import './index.less';
 
 const app = dva({
@@ -20,7 +20,7 @@ app.use(createLoading({ effects: true }));
 // app.model(require('./models/app'))
 
 // 4. Router
-app.router(router.default);
+app.router(router);
 
 // 5. Start
 app.start('#root');

@@ -9,12 +9,18 @@ import styles from './index.less';
 // import Login from './routes/Login';
 // import App from './layouts/App';
 
+interface RoutersProps{
+  history: object;
+  app: object;
+}
+
 const { ConnectedRouter } = routerRedux;
+
 dynamic.setDefaultLoadingComponent(() => {
   return <Spin size="large" className={styles.globalSpin} />;
 });
 
-function RouterConfig({ history, app }) {
+function RouterConfig({ history, app }: RoutersProps) {
   // const passProps = {
   //   app,
   //   component: App,

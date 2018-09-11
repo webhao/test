@@ -3,13 +3,6 @@
     "@babel/preset-env",
     "@babel/preset-react"
   ],
-  "env": {
-    "development": {
-      "plugins": [
-        "react-hot-loader/babel"
-      ]
-    }
-  },
   "plugins": [
     "@babel/plugin-syntax-dynamic-import",
     ["import", {
