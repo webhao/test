@@ -1,0 +1,76 @@
+html,
+body,
+:global(#root) {
+  height: 100%;
+}
+
+:global(.ant-layout) {
+  min-height: 100%;
+}
+
+canvas {
+  display: block;
+}
+
+body {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.globalSpin {
+  width: 100%;
+  margin: 40px 0 !important;
+}
+
+// temp fix for https://github.com/ant-design/ant-design/commit/a1fafb5b727b62cb0be29ce6e9eca8f579d4f8b7
+:global {
+  .ant-spin-container {
+    overflow: visible !important;
+  }
+  // 覆盖样式
+  // btn
+  .ant-btn {
+    box-shadow: 0 4px 8px 0 rgba(182, 205, 240, 0.4);
+    border: none !important;
+  }
+  .ant-btn:hover, .ant-btn:focus, .ant-btn:active, .ant-btn.active {
+    background-color: #f0f0f0;
+  }
+  .ant-btn-danger {
+    color: #fff !important;
+    background-color: #ff5c64 !important;
+  }
+  .ant-btn-danger:hover {
+    background-color: #ff6763 !important;
+  }
+  .ant-btn-danger.active, .ant-btn-danger:active, .ant-btn-danger:visited {
+    background-color: #ff6763 !important;
+  }
+  .ant-btn-primary:hover, .ant-btn-primary:focus {
+    background-color: #4c5265 !important;
+  }
+}
+
+// fix browser default scrollbar
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track-piece {
+  border-radius: 6px;
+  background-color: #ccc;
+}
+
+::-webkit-scrollbar-thumb:vertical {
+  height: 5px;
+  border-radius: 6px;
+  background-color: #999;
+}
+
+::-webkit-scrollbar-thumb:horizontal {
+  width: 5px;
+  border-radius: 6px;
+  background-color: #999;
+}
